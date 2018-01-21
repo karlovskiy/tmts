@@ -1,0 +1,21 @@
+{
+  "senderReference": "REF0002",
+  "valueDate": 1516555887447,
+  "amount": 200.00,
+  "currency": "USD",
+  "orderingCustomer": {
+    "account": "BH50CHAS00000077777777",
+    "name": "Mr Anderson"
+  },
+  "orderingInstitution": {
+    "bic": "CHASBHBM"
+  },
+  "beneficiaryCustomer": {
+    "account": "BH81CITI00000123456789",
+    "name": "Neo"
+  },
+  "accountWithInstitution": {
+    "bic": "CITIBHBX"
+  },
+  "remittanceInformation": "Find the ONE"
+}

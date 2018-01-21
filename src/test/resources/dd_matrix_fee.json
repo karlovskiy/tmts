@@ -1,0 +1,23 @@
+{
+  "senderReference": "REF0001",
+  "requestedExecutionDate": 1516553033499,
+  "transactionReference": "TX0001",
+  "amount": 100.52,
+  "currency": "USD",
+  "debtorBank": {
+    "bic": "CITIBHBX"
+  },
+  "debtor": {
+    "account": "BH81CITI00000123456789",
+    "name": "Neo"
+  },
+  "creditorBank": {
+    "bic": "BBMEBHBX"
+  },
+  "creditor": {
+    "account": "BH86BBME00000987654321",
+    "name": "Matrix"
+  },
+  "mandateReference": null,
+  "remittanceInformation": "Membership fee"
+}

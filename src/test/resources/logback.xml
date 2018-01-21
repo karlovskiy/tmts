@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %-5level [%thread] %logger{20} %m%ex%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="requestlog" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="tmts.request_log" additivity="false" level="INFO">
+        <appender-ref ref="requestlog"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

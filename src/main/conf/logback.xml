@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Logging configuration -->
+    
+    <property name="logs.level"             value="debug" />
+    <property name="logs.maxBackupIndex"    value="3" />
+    <property name="logs.rotateSize"        value="100MB" />
+
+    <appender name="server" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${tmts.home}/logs/server.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${tmts.home}/logs/server%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>${logs.maxBackupIndex}</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${logs.rotateSize}</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d %-5level [%thread] %logger{20} %m%ex%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="requestlog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${tmts.home}/logs/server.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${tmts.home}/logs/server%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>${logs.maxBackupIndex}</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${logs.rotateSize}</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="tmts.request_log" additivity="false" level="INFO">
+        <appender-ref ref="requestlog"/>
+    </logger>
+
+    <root level="${logs.level}">
+        <appender-ref ref="server"/>
+    </root>
+</configuration>

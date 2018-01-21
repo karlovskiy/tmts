@@ -1,0 +1,13 @@
+[Unit]
+Description=Typical Money Transfer System
+After=network.target
+
+[Service]
+Type=forking
+Environment=JAVA_HOME=/opt/java TMTS_HOME=/opt/tmts
+ExecStart=/bin/sh ${TMTS_HOME}/bin/start.sh
+ExecStop=/bin/sh ${TMTS_HOME}/bin/stop.sh
+User=root
+
+[Install]
+WantedBy=multi-user.target
